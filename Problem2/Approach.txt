@@ -1,0 +1,35 @@
+Objective: 
+----------------
+The program aims to distribute a collection of apple weights among three individuals—Ram, Sham, and Rahim—based on specified proportions of the total weight.
+
+Steps:
+
+Input Collection:
+------------------
+1. The program continuously prompts the user to input apple weights until the user enters -1.
+2. All valid apple weights are stored in a vector<int> named weights.
+
+Calculate Total Weight:
+------------------------
+1. It calculates the total weight of all apples by summing up the values in the weights vector.
+
+Define Proportions:
+--------------------
+1.The proportions for Ram, Sham, and Rahim are defined as 50%, 30%, and 20% of the total weight, respectively.
+
+Distribute Weights:
+--------------------
+1.It initializes three vectors (ram_weights, sham_weights, rahim_weights) to hold the weights allocated to each individual.
+2. It also initializes sums to track the total weight assigned to each individual (ram_weight_sum, sham_weight_sum, rahim_weight_sum).
+
+Greedy Allocation:
+---------------------
+1. The program iterates over each weight in the weights vector.
+2. It attempts to allocate each weight to Ram, Sham, or Rahim based on their remaining weight capacity. The allocation is made as follows:
+3. If adding the weight to Ram's current total does not exceed Ram's target weight (50% of total weight), the weight is assigned to Ram.
+4. If the weight cannot be added to Ram's total but can be added to Sham's total without exceeding Sham's target weight (30% of total weight), it is assigned to Sham.
+5. If neither Ram's nor Sham's target weight can accommodate the weight, it is assigned to Rahim.
+
+Print Distribution:
+-------------------
+1. After all weights are allocated, the program prints the distributed weights for Ram, Sham, and Rahim.

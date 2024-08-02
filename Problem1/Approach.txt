@@ -1,0 +1,53 @@
+
+1. Class Definitions
+----------------------
+Point Class:
+------------
+Represents a point in 2D space with x and y coordinates.
+Contains a constructor to initialize the coordinates.
+
+Flight Class:
+-------------
+Represents a flight path consisting of a sequence of Point objects.
+Contains a vector path that stores the sequence of points (coordinates) that make up the flight path.
+
+
+2. Function Definitions
+------------------------
+drawLine Function:
+--------------------
+Purpose: Draws a line on a 2D grid using Bresenham’s line algorithm.
+Parameters:
+grid: The 2D character grid where the line will be drawn.
+start: The starting point of the line.
+end: The ending point of the line.
+symbol: The character to represent the line on the grid.
+Implementation:
+Calculate the differences in the x and y coordinates (dx, dy).
+Determine the direction of movement (sx and sy) based on whether the line is moving up, down, left, or right.
+Use Bresenham’s algorithm to plot the line on the grid. This algorithm is efficient for drawing lines on raster displays.
+drawFlightPaths Function:
+
+Purpose: Draws all flight paths on a 2D grid.
+Parameters:
+flights: A vector of Flight objects, where each flight contains a list of points.
+Implementation:
+Determine the grid size based on the maximum x and y coordinates found in all flight paths.
+Initialize the grid with the size derived from the maximum coordinates, filling it with '.'.
+For each flight, use drawLine to draw the path on the grid with a unique symbol for each flight (starting from 'A' and incrementing).
+Print the grid row by row, starting from the top row to the bottom row, and column by column, from left to right.
+
+
+3. Main Function
+--------------------
+Purpose: Drives the entire program by getting user input, processing it, and displaying the result.
+--------
+Steps:
+-------
+Input Number of Flights:
+Read the number of flights from the user.
+Input Coordinates:
+For each flight, repeatedly read coordinates from the user until -1,-1 is entered, which indicates the end of input for that flight.
+Convert the input coordinates from 1-based indexing to 0-based indexing and store them in a Flight object.
+Draw Flight Paths:
+Call drawFlightPaths to generate the grid and print it based on the flight paths collected.
