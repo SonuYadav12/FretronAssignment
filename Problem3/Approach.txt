@@ -1,0 +1,57 @@
+1. Class Definition
+
+class SpecialCastle: 
+This class encapsulates all functionalities required to solve the problem of finding paths on a board with soldiers and a special castle.
+
+Private Members:
+bool soldiers[BOARD_SIZE][BOARD_SIZE]: A 2D array to represent the board. true indicates the presence of a soldier at a specific position.
+int castleX, castleY: Coordinates for the special castle.
+vector<vector<string>> allPaths: A container to store all possible paths from the castle to itself.
+Private Methods:
+void findPathsRecursive(int x, int y, int direction, vector<string>& currentPath): A recursive function to explore all possible paths from the current position (x, y) in the given direction. It also handles:
+Moving in the current direction.
+Killing soldiers and turning left.
+Jumping over empty cells.
+2. Constructor
+SpecialCastle(): Initializes the board by setting all cells to false, indicating no soldiers are present initially.
+3. Public Methods
+void placeSoldiers()
+Prompts the user for the number of soldiers and their coordinates.
+Updates the board based on user input by setting the respective positions to true.
+void placeCastle()
+Prompts the user for the coordinates of the special castle.
+Updates castleX and castleY with the 0-based indices of the castle's position.
+void findPaths()
+Initializes the pathfinding process by calling the recursive method from the special castle’s position.
+void printPaths() const
+Prints all the paths stored in allPaths, with each path formatted as a sequence of moves.
+4. Main Function
+int main(): The entry point of the program.
+
+Creates an instance of SpecialCastle.
+Calls placeSoldiers() to set up the soldiers.
+Calls placeCastle() to set the special castle's position.
+Calls findPaths() to compute all possible paths from the castle.
+Calls printPaths() to display the found paths.
+Detailed Approach and Organized Order:
+Initialization:
+
+Class Construction: The SpecialCastle class initializes the board with no soldiers.
+User Input:
+
+Soldiers Placement:
+The user specifies the number of soldiers and their positions.
+Each soldier's position is updated on the board.
+Castle Placement:
+The user specifies the coordinates of the special castle.
+The position of the castle is updated.
+Pathfinding:
+
+Recursive Pathfinding:
+Starts from the castle's position.
+Recursively explores all possible moves, kills, and jumps.
+Maintains the state of the board (soldiers present or not) during exploration to avoid redundant paths.
+Output:
+
+Printing Paths:
+Displays all the valid paths from the castle to itself, formatted as per the movement and actions taken.
